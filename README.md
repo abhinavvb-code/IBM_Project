@@ -43,7 +43,7 @@ jupyter notebook "Ibm (1).ipynb"
 To launch the user interface for predictions:
 
 ```bash
-python IBM_UI.py
+streamlit run IBM_UI.py
 ```
 
 ## 💾 Model Usage
@@ -51,10 +51,10 @@ python IBM_UI.py
 The best-performing model is saved as `ridge_salary_model (1).pkl`. Load and use it with:
 
 ```python
-import pickle
+import joblib
 
-with open('ridge_salary_model (1).pkl', 'rb') as f:
-    model = pickle.load(f)
+# Load the trained Ridge pipeline
+ridge_pipeline = joblib.load("ridge_salary_model.pkl")
 ```
 
 Use this model to predict salary based on input features like job role, experience, etc.
